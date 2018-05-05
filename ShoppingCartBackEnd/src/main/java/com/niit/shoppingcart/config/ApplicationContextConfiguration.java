@@ -30,6 +30,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.shoppingcart.domain.User;
+
 
 
 @Configuration
@@ -41,6 +43,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class ApplicationContextConfiguration {
 
 
+	@Autowired
 
 	@Bean(name = "dataSource")
 
@@ -50,7 +53,7 @@ public class ApplicationContextConfiguration {
 
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-		dataSource.setUrl("jdbc:h2:tcp://localhost/~/ShppingCart403DB");
+		dataSource.setUrl("jdbc:h2:tcp://localhost/~/ShppingCartDB");
 
 
 
@@ -80,10 +83,10 @@ public class ApplicationContextConfiguration {
 
 		//Based on dialect, the query will convert into db sepecific language
 
-		
-
-		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-
+		properties.put("hibernate.show_sql", "true");
+        properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+        properties.put("hibernate.format_sql", "true");
+        properties.put("hibernate.hbm2ddl.auto", "update");
 		
 
 		return properties;
@@ -111,6 +114,8 @@ public class ApplicationContextConfiguration {
 		
 
 		sessionBuilder.scanPackages("com.niit");
+		
+		sessionBuilder.addAnnotatedClass(User.class);
 
 	
 

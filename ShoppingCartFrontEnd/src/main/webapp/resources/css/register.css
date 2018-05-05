@@ -1,16 +1,10 @@
 @CHARSET "ISO-8859-1";
-/*
-/* Created by Filipe Pina
- * Specific styles of signin, register, component
- */
-/*
- * General styles
- */
+
 
 body, html{
      height: 100%;
  	background-repeat: no-repeat;
- 	background-color:#c0c0c0;
+ 	background-color: #d3d3d3;
  	font-family: 'Oxygen', sans-serif;
 }
 
@@ -44,7 +38,7 @@ input::-webkit-input-placeholder {
 }
 
 .main-login{
- 	background-color: #c0c0c0;
+ 	background-color:#d3d3d3;
     /* shadows and rounded borders */
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;

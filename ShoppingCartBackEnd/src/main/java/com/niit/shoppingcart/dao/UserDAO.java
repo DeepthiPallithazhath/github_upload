@@ -1,4 +1,8 @@
+
+
 package com.niit.shoppingcart.dao;
+
+
 
 import java.util.List;
 
@@ -80,6 +84,58 @@ public interface UserDAO {
 
 	//When we use spring security, we will remove this method
 
-	public boolean validate(String emailID, String password);
+	public User validate(String emailID, String password);
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
 
 }

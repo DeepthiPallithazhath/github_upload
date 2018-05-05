@@ -1,26 +1,15 @@
 
-<!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
 <html lang="en">
     <head> 
-   
-    
-    
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-
-
+    <jsp:include page="login_header.jsp"></jsp:include>
+    <link rel="stylesheet" type="text/css" href="resources/css/register.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">-->
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 
 		<!-- Website CSS style -->
-		<jsp:include page="login_header.jsp"></jsp:include>
-
-<link rel="stylesheet" type="text/css" href="resources/css/register.css">
-		<!--  <link rel="stylesheet" type="text/css" href="assets/css/main.css">-->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
 		<!-- Website Font style -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -32,12 +21,11 @@
 		<title>Admin</title>
 	</head>
 	<body>
-	
 		<div class="container">
 			<div class="row main">
 				<div class="panel-heading">
 	               <div class="panel-title text-center">
-	               		<h1 class="title">Sign In Here</h1>
+	               		<h1 class="title">Sign in</h1>
 	               		<hr />
 	               	</div>
 	            </div> 
