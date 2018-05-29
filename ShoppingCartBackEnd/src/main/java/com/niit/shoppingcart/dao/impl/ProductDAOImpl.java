@@ -13,7 +13,7 @@ import javax.transaction.Transactional;
 
 
 import org.hibernate.HibernateException;
-
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -181,6 +181,16 @@ public class ProductDAOImpl  implements ProductDAO{
 	public List<Product> list(int amount) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public List<Product> getFilterProducts(int id)
+	{
+Session s=sessionFactory.openSession();
+		
+		List<Product> results =s.createQuery("from Product where C_ID="+id).list();
+		s.close();
+		// TODO Auto-generated method stub
+		return results;
 	}
 
 

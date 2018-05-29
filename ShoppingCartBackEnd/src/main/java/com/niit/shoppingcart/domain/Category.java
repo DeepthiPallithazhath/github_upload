@@ -3,17 +3,17 @@ package com.niit.shoppingcart.domain;
 
 
 import java.sql.Date;
+import java.util.Set;
 
-
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
-
+import org.hibernate.annotations.GeneratorType;
 import org.springframework.stereotype.Component;
 
 
@@ -31,6 +31,9 @@ public class Category {
 	//add the properties - same as fields in Category Table.
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	
 
 	private String category_name;
 
@@ -41,6 +44,44 @@ public class Category {
 	
 
 	private Date added_date;
+	@OneToMany(targetEntity=Product.class,mappedBy = "category", cascade = CascadeType.ALL)
+	Set<Product> products;
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+	public String getCategory_name() {
+		return category_name;
+	}
+
+
+
+	public void setCategory_name(String category_name) {
+		this.category_name = category_name;
+	}
+
+
+
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
 
 
 

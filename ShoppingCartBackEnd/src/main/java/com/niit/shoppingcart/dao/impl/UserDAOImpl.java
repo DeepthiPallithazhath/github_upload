@@ -70,7 +70,7 @@ public class UserDAOImpl implements UserDAO {
 
 			user.setAdded_date(new Date(System.currentTimeMillis()));
 
-			sessionFactory.getCurrentSession().save(user);
+			sessionFactory.getCurrentSession().saveOrUpdate(user);
 
 		} catch (Exception e) {
 
@@ -130,6 +130,8 @@ public class UserDAOImpl implements UserDAO {
 
 		try {
 
+			
+			System.out.println("Entered Update");
 			sessionFactory.getCurrentSession().update(user);
 
 		} catch (HibernateException e) {
@@ -164,7 +166,7 @@ public class UserDAOImpl implements UserDAO {
 
 
 
-	public List<User> list() {
+	public List<User> list(char role) {
 
 		return sessionFactory.getCurrentSession().createQuery("from User").list();
 
@@ -188,6 +190,13 @@ public class UserDAOImpl implements UserDAO {
 
 		
 
+	}
+
+
+
+	public List<User> list() {
+		// TODO Auto-generated method stub
+		return sessionFactory.getCurrentSession().createQuery("from User").list();
 	}
 
 

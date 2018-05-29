@@ -58,7 +58,23 @@
 
 		</property>
 
-	</bean>	<mvc:resources mapping="/resources/**" location="/resources/" />
+	</bean>
+	<bean id="multipartResolver"
+
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+
+
+		 <!-- setting maximum upload size -->
+
+		<property name="maxUploadSize" value="30000000" />
+
+
+
+	</bean>
+	
+	
+		<mvc:resources mapping="/resources/**" location="/resources/" />
 
 	
 
@@ -68,7 +84,3 @@
 
 
 </beans>
-
-
-
- 

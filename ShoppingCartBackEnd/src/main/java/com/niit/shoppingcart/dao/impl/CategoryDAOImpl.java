@@ -110,7 +110,7 @@ public class CategoryDAOImpl  implements CategoryDAO{
 
 
 
-	public boolean delete(String name) {
+	public boolean delete(Category category) {
 
 
 
@@ -120,18 +120,7 @@ public class CategoryDAOImpl  implements CategoryDAO{
 
 			//if the record does not exist, return false;
 
-			Category category = get(name);
-
-			if(category==null)
-
-			{
-
-				return false;
-
-			}
-
-			
-
+		
 			sessionFactory.getCurrentSession().delete(category);
 
 			return true;
@@ -158,11 +147,11 @@ public class CategoryDAOImpl  implements CategoryDAO{
 
 
 
-	public Category get(String name) {
+	public Category get(int id) {
 
 		
 
-	return	(Category) sessionFactory.getCurrentSession().get(Category.class,name);
+	return	(Category) sessionFactory.getCurrentSession().get(Category.class,id);
 
 		
 
@@ -179,6 +168,8 @@ public class CategoryDAOImpl  implements CategoryDAO{
 		
 
 	}
+
+
 
 
 

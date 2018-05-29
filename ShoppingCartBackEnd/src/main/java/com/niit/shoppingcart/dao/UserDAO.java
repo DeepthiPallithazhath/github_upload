@@ -77,7 +77,7 @@ public interface UserDAO {
 	public  List<User>    list();
 
 	
-
+	public List<User> list(char role);
 	//6 validate credentials
 
 	//At present we are not using spring security
@@ -85,6 +85,12 @@ public interface UserDAO {
 	//When we use spring security, we will remove this method
 
 	public User validate(String emailID, String password);
+
+
+
+
+
+	
 
 	
 

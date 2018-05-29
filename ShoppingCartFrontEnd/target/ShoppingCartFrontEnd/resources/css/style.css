@@ -1,0 +1,30 @@
+@CHARSET "ISO-8859-1";
+
+
+
+.navbar navbar-inverse{ 
+
+
+	 
+
+
+	background-image: url("../images/bodybackground.jpg"); 
+
+
+} 
+
+
+
+
+.bodybackground{ 
+
+
+	background-image: url("../images/bodybackground.jpg"); 
+
+
+	background-size: 100%; 
+
+
+}
+
+	

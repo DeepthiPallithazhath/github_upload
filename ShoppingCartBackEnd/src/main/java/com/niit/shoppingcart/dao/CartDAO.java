@@ -1,10 +1,13 @@
 package com.niit.shoppingcart.dao;
 
+
+
 import java.util.List;
 
 
 
 import com.niit.shoppingcart.domain.Cart;
+
 
 
 public interface CartDAO {
@@ -23,7 +26,19 @@ public interface CartDAO {
 
 	
 
+	public boolean update(List<Cart> carts, char status);
+
+	
+
 	public boolean delete(int id);
+
+	
+
+	
+
+	
+
+	
 
 	
 
@@ -32,6 +47,42 @@ public interface CartDAO {
 	//select * from Cart where emailID = ?
 
 	public  List<Cart>  list(String emailID);
+
+	
+
+	//get cart by cart id;
+
+	
+
+	public Cart    get(int id);
+
+	
+
+	//get cart by email ID
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
 
 	
 

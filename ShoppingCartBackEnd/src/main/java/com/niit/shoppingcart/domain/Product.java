@@ -2,6 +2,7 @@ package com.niit.shoppingcart.domain;
 
 
 
+import java.beans.Transient;
 import java.sql.Date;
 
 
@@ -9,7 +10,8 @@ import java.sql.Date;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -24,6 +26,7 @@ import org.springframework.stereotype.Component;
 
 @Entity
 
+
 public class Product {
 
 	
@@ -31,9 +34,8 @@ public class Product {
 	@Id
 
 	private String id;
-
 	
-
+    
 	private String name;
 
 	
@@ -54,8 +56,12 @@ public class Product {
 
 	//
 
-	private String category_name;
-
+	@ManyToOne
+	@JoinColumn(name="C_ID")
+	private Category category;
+	@ManyToOne
+	@JoinColumn(name="S_ID")
+	private Supplier supplier;
 
 
 	
@@ -140,20 +146,33 @@ public class Product {
 
 
 
-	public String getCategory_name() {
-
-		return category_name;
-
+	public Category getCategory() {
+		return category;
 	}
 
 
 
-	public void setCategory_name(String category_name) {
-
-		this.category_name = category_name;
-
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
+
+
+	public Supplier getSupplier() {
+		return supplier;
+	}
+
+
+
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
+
+
+
+	
+
+	
 
 
 }

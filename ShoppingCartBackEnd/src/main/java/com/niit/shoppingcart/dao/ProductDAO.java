@@ -62,7 +62,7 @@ public interface ProductDAO {
 
 	public List<Product> list(int amount);
 
-	
+	public List<Product> getFilterProducts(int id);
 
 	//search for all product where the cost is between 10k and 20k
 

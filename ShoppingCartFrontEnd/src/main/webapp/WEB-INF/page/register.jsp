@@ -21,6 +21,7 @@
 		<title>Admin</title>
 	</head>
 	<body>
+	
 		<div class="container">
 			<div class="row main">
 				<div class="panel-heading">
@@ -30,9 +31,13 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+				
+					<!--  <form class="form-horizontal" method="post" action="#">-->
+					
+					<form action="register/save" method="post">
+					
 						
-						<div class="form-group">
+						<!--  <div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Your Name</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
@@ -41,16 +46,10 @@
 								</div>
 							</div>
 						</div>
+						
+						-->
 
-						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Your Email</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-								</div>
-							</div>
-						</div>
+						
 
 						<div class="form-group">
 							<label for="username" class="cols-sm-2 control-label">Username</label>
@@ -81,14 +80,56 @@
 								</div>
 							</div>
 						</div>
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+								</div>
+							</div>
+						</div>
+
+                    <div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Address</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<!-- <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span> -->
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="address" id="address"  placeholder="Address"/>
+								</div>
+							</div>
+						</div>
+						
+					<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Mobile</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<!--  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>-->
+									<span class="input-group-addon">
+									
+									 <i class="fa fa-users fa" aria-hidden="true"></i> 
+									
+									</span>
+									<input type="text" class="form-control" name="mobile" id="mobile"  placeholder="mobile"/>
+								</div>
+							</div>
+						</div>
+
 
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
+						<!--  
 						<div class="login-register">
 				            <a href="index.php">Login</a>
 				         </div>
+				         -->
+				         
+				         
 					</form>
+					
+					
 				</div>
 			</div>
 		</div>

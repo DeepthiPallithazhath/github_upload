@@ -7,22 +7,22 @@
  
 
 
-.headerbackground{ 
+/*.headerbackground{ 
 
 
 	 
 
 
-	background-image: url("../images/bodybackground.PNG"); 
+	<background-image: url("../images/bodybackground.PNG"); 
 
 
-} 
+} */
 
 
  
 
 
-.bodybackground{ 
+/*.bodybackground{ 
 
 
 	background-image: url("../images/headerbackground.PNG"); 
@@ -31,4 +31,4 @@
 	background-size: 100%; 
 
 
-}
+}*/

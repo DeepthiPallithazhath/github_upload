@@ -25,7 +25,6 @@ public interface CategoryDAO {
 	//create
 
 	public  boolean   save(Category category); 
-
 	
 
 	//update
@@ -36,7 +35,7 @@ public interface CategoryDAO {
 
 	//delete
 
-	public boolean delete(String name);
+	public boolean delete(Category category);
 
 	
 
@@ -44,9 +43,7 @@ public interface CategoryDAO {
 
 	//get the category details based on name
 
-	public Category get(String name);
-
-	
+	public Category get(int id);
 
 	//get all the categories
 
@@ -54,15 +51,8 @@ public interface CategoryDAO {
 
 	public List<Category>  list();
 
-	
 
-	
 
-	
-
-	
-
-	
 
 
 

@@ -31,9 +31,6 @@
 <!-- external css --> 
 
 
-    <link rel="stylesheet" type="text/css" href="resources/css/style.css"> 
-
-
  
 
 
@@ -106,7 +103,7 @@ ${logoutMessage}
 
 
 hiii welcome
-		<!--<jsp:include page="login.jsp"/>-->
+		<jsp:include page="login.jsp"/>
 		
 
 
@@ -125,8 +122,15 @@ hiii welcome
 	</c:if> 
 
 
-  
+  <!--<c:if test="${isAdmin==true}"> 
 
+
+		<jsp:include page="admin.jsp"></jsp:include> 
+
+
+	</c:if> 
+  
+-->
 
 
 

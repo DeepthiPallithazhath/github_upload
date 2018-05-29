@@ -1,7 +1,10 @@
 F:\Project_ShoppingCart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\impl\UserDAOImpl.java
 F:\Project_ShoppingCart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\domain\Category.java
+F:\Project_ShoppingCart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\domain\Supplier.java
 F:\Project_ShoppingCart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\CartDAO.java
 F:\Project_ShoppingCart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\impl\CartDAOImpl.java
+F:\Project_ShoppingCart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\impl\SupplierDAOImpl.java
+F:\Project_ShoppingCart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\SupplierDAO.java
 F:\Project_ShoppingCart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\domain\Product.java
 F:\Project_ShoppingCart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\domain\User.java
 F:\Project_ShoppingCart\ShoppingCartBackEnd\src\main\java\com\niit\shoppingcart\dao\CategoryDAO.java
