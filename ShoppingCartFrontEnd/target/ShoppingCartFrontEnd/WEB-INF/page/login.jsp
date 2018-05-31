@@ -19,12 +19,13 @@
         <div class="col-md-offset-5 col-md-3">
             <div class="form-login">
                  
-		<form action="validate" method="post"  name="Login_Form" class="form-signin"> 
+		<form action="j_spring_security_check" method="post"  name="Login_Form" class="form-signin"> 
 		
             <h4>Welcome back.</h4>
-            <input type="text" name="userName" class="form-control input-sm chat-input" placeholder="username" />
+            <h5 style="color: red">${msg}</h5>
+            <input type="text" name="j_username" class="form-control input-sm chat-input" placeholder="username" />
             </br>
-            <input type="text" name="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+            <input type="password" name="j_password" class="form-control input-sm chat-input" placeholder="password" />
             </br>
             <div class="wrapper">
             <span class="group-btn">     
@@ -38,12 +39,6 @@
     </div>
 
 </div>
-<c:if test="${isAdmin==true}"> 
 
-
-		<jsp:include page="admin.jsp"></jsp:include> 
-
-
-	</c:if> 
 </body>
 </html>

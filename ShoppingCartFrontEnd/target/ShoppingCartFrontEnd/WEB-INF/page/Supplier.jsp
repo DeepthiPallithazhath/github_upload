@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!--  <div style="width: 500px">-->
 
 <form action="supplier/save" method="post">
 
@@ -79,7 +80,7 @@
 </c:forEach>
 </table>
 	
-	
+	<!--  </div>-->
 	
 </body>
 </html>

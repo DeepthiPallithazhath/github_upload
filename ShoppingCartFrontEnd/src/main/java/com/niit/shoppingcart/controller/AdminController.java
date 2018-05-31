@@ -13,9 +13,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
-
-import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -93,8 +92,30 @@ public class AdminController {
 
 	private HttpSession httpSession;
 
-	
+	@RequestMapping("/admin")
 
+	public ModelAndView adminPage(@RequestParam("message") String msg)
+
+	{
+
+		ModelAndView mv = new ModelAndView("administrator");
+
+		List<Category> categories =  categoryDAO.list();
+		List<Supplier> suppliers = supplierDAO.list();
+		List<Product> products =  productDAO.list();
+	        
+	      
+	        mv.addObject("categories", categories);
+	        mv.addObject("suppliers", suppliers);
+	        mv.addObject("products", products);
+	        mv.addObject("message", msg);
+		httpSession.setAttribute("categories", categories);		
+
+		return mv;
+
+	}
+
+/*
 	@GetMapping("/manage_categories")
 
 	public ModelAndView manageCategories()
@@ -170,13 +191,14 @@ public class AdminController {
 		List<Category> categories =  categoryDAO.list();
         mv.addObject("categories", categories);
 
-
+        List<Supplier> suppliers =  supplierDAO.list();
+        mv.addObject("suppliers", suppliers);
 		
 
 		return mv;
 
 	}
-
+*/
 
 
 }

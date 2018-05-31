@@ -6,8 +6,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,12 +30,12 @@ public class CategoryController {
 	@Autowired
 	private HttpSession httpSession;
 	
-	@PostMapping("category/save")
+	@RequestMapping("admin/category/save")
 	public ModelAndView saveProduct(
 			@RequestParam String name, 
 			@RequestParam String description) {
 
-		ModelAndView mv = new ModelAndView("redirect:/manage_categories");
+		ModelAndView mv = new ModelAndView("redirect:/admin");
 		category.setDescription(description);
 		category.setName(name);
 		category.setAdded_date(new Date(System.currentTimeMillis()));
@@ -70,12 +71,13 @@ public class CategoryController {
 		return mv;
 
 	}
-	@PostMapping("category/update")
+	
+	@RequestMapping("admin/category/update")
 	public ModelAndView updateC(
 			@RequestParam String name, 
 			@RequestParam String description) {
 
-		ModelAndView mv = new ModelAndView("redirect:/manage_categories");
+		ModelAndView mv = new ModelAndView("redirect:/admin");
 		category.setDescription(description);
 		category.setName(name);
 		category.setAdded_date(new Date(System.currentTimeMillis()));
@@ -96,14 +98,14 @@ public class CategoryController {
 
 	
 	
-	@GetMapping("/category/delete")
+	@RequestMapping("admin/category/delete")
 	public ModelAndView deleteProduct(@RequestParam int id)
 	{
-		ModelAndView mv = new ModelAndView("redirect:/manage_categories");
+		ModelAndView mv = new ModelAndView("redirect:/admin");
 		
 		if(categoryDAO.delete(categoryDAO.get(id)))
 		{
-			mv.addObject("message", "The product successfully deleted");
+			mv.addObject("message", "The category successfully deleted");
 		}
 		else
 		{
@@ -115,7 +117,7 @@ public class CategoryController {
 	
 	
 	
-	@GetMapping("/category/edit")
+	@RequestMapping("admin/category/edit")
 	public ModelAndView editProduct(@RequestParam("id") int id)
 	{
 		ModelAndView mv = new ModelAndView("updateC");

@@ -83,6 +83,7 @@ public class ProductDAOImpl  implements ProductDAO{
 
 
 		try {
+			product.setAdded_date(new Date(System.currentTimeMillis()));
 
 			sessionFactory.getCurrentSession().update(product);
 
@@ -178,9 +179,10 @@ public class ProductDAOImpl  implements ProductDAO{
 
 
 
-	public List<Product> list(int amount) {
+	public List<Product> list(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return	sessionFactory.getCurrentSession().createQuery("from Product where id="+id).list();
+
 	}
 	
 	public List<Product> getFilterProducts(int id)

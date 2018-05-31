@@ -34,6 +34,21 @@
 </c:forEach>
  
 </select>
+
+
+ </td></tr>
+ 
+ <tr>
+<td>Select Supplier</td>
+<td>
+<select name="sid">
+<c:forEach var="supplier" items="${suppliers}">
+<option value="${supplier.id}">${supplier.name}  </option> 
+</c:forEach>
+ 
+</select>
+
+
  </td></tr>
  
  <tr><td>Upload image : </td><td> <input type="file" id="img" name="file"> </td></tr>
@@ -57,6 +72,8 @@
 <td>Name</td>
 <td>Description</td>
 <td>Price</td>
+<td>Supplier Name</td>
+<td>Category Name</td>
 <td> </td>
 </tr>
 <c:forEach var="p" items="${products}" >
@@ -66,6 +83,10 @@
 <td>${p.name}</td>
 <td>${p.description}</td>
 <td>${p.price}</td>
+<td>${p.supplier.name}</td>
+<td>${p.category.name}</td>
+
+
 <td> 
 <a href="product/delete?id=${p.id}">Delete</a> <a href="product/edit?id=${p.id}"> | Edit</a>
 

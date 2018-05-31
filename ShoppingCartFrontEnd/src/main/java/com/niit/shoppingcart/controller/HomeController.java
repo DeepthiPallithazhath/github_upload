@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 //convert this class into Servlet /Controller
 import org.springframework.stereotype.Controller;
-
-import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.web.bind.annotation.RequestMapping;
+
+//import org.springframework.web.bind.annotation.GetMapping;
+
+//import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,7 +55,7 @@ public class HomeController {
 
 	//   http://localhost:8080/shoppingcart/
 
-		@GetMapping("/")
+	@RequestMapping("/")
 
 	//@RequestMapping(value="/",   method = RequestMethod.GET)
 
@@ -77,9 +78,9 @@ public class HomeController {
 
 	//http://localhost:8080/shoppingcart/login	
 
-	@GetMapping("/login")	
+	@RequestMapping("/login")	
 
-	public ModelAndView login() 
+	public ModelAndView login(@RequestParam("msg")String msg) 
 
 
  	{ 
@@ -89,33 +90,18 @@ public class HomeController {
 
 	ModelAndView mv = new ModelAndView("login"); 
 	
-
-
-		//mv.addObject("loginMessage", "Thank for login"); 
-List<Category> categories =  categoryDAO.list();
+    List<Category> categories =  categoryDAO.list();
     
     
     mv.addObject("categories", categories);
+    mv.addObject("msg", msg);
 	
-
-
-		mv.addObject("isUserClickedLogin", true); 
-		
-
-
-		return mv; 
-
-
-
-
-
+    return mv; 
  	} 
 
 	//http://localhost:8080/shoppingcart/register
 
-		@GetMapping("/register")	
-
-		
+	@RequestMapping("/register")			
 
 	public ModelAndView registration()
 
@@ -126,24 +112,11 @@ List<Category> categories =  categoryDAO.list();
 		
 		ModelAndView mv= new ModelAndView("register");	 
 
-
-			 
-
-
-			//carry the data 
-
-
-			//mv.addObject("msg", "Thank you for registration"); 
-
-
-		mv.addObject("isUserClickedRegister", true); 
-
-
 			return mv;
 		
 
 	}
-@GetMapping("/logout")
+	@RequestMapping("/logout")
 	public ModelAndView logout()
 	{
 
@@ -156,12 +129,31 @@ return mv;
 	
 
 	
-@GetMapping("/ProductPage")
+	@RequestMapping("/ProductPage")
 public ModelAndView displayProductPage(@RequestParam int id)
 {
 	ModelAndView mv = new ModelAndView("ProductPage");
 	
 	List<Product> products =productDAO.getFilterProducts(id) ;
+	
+		
+	mv.addObject("products",products);
+	
+	List<Category> categories =  categoryDAO.list();
+    
+    
+    mv.addObject("categories", categories);
+	return mv;
+	
+}
+	
+
+	@RequestMapping("/ProductDetails")
+public ModelAndView displayProductDetails(@RequestParam("id") int id)
+{
+	ModelAndView mv = new ModelAndView("ProductDetails");
+	
+	List<Product> products =productDAO.list(id) ;
 	
 		
 	mv.addObject("products",products);

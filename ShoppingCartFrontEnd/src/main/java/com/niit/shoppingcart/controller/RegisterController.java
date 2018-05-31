@@ -5,8 +5,10 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -37,7 +39,7 @@ public class RegisterController {
 	
 	
 	
-	@PostMapping("/register/save")
+	@RequestMapping("/register/save")
 
 	public ModelAndView saveUser(@RequestParam String email,
 
@@ -56,10 +58,12 @@ public class RegisterController {
 		user.setMobile(mobile);
 
 		user.setName(username);
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String hashedPassword = passwordEncoder.encode(password);
 
-		user.setPassword(password);
+		user.setPassword(hashedPassword);
 
-		user.setRole('S');
+		user.setRole("ROLE_ADMIN");
 
 
 

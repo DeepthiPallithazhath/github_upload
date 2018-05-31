@@ -88,7 +88,7 @@ public class User {
 
 	
 
-	private Character role;
+	private String role;
 
 	
 
@@ -164,13 +164,13 @@ public class User {
 
 
 
-	public Character getRole() {
+	public String getRole() {
 		return role;
 	}
 
 
 
-	public void setRole(Character role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 

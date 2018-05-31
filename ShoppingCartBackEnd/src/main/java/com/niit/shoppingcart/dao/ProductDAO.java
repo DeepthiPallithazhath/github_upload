@@ -60,7 +60,7 @@ public interface ProductDAO {
 
 	
 
-	public List<Product> list(int amount);
+	public List<Product> list(int id);
 
 	public List<Product> getFilterProducts(int id);
 

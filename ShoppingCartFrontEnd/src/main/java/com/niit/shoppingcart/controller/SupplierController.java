@@ -11,10 +11,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.GetMapping;
 
-import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -44,11 +45,11 @@ public class SupplierController {
 
 
 
-	@PostMapping("/supplier/save")
+	@RequestMapping("admin/supplier/save")
 
 	public ModelAndView saveSupplier(@RequestParam String name, @RequestParam String address) {
 
-		ModelAndView mv = new ModelAndView("redirect:/manage_suppliers");
+		ModelAndView mv = new ModelAndView("redirect:/admin");
 
 
 
@@ -107,7 +108,7 @@ public class SupplierController {
 
 	
 
-	@GetMapping("/supplier/delete")
+	@RequestMapping("admin/supplier/delete")
 
 	public ModelAndView deleteSupplier(@RequestParam int id)
 
@@ -115,7 +116,7 @@ public class SupplierController {
 
 		
 		
-		ModelAndView mv = new ModelAndView("redirect:/manage_suppliers");
+		ModelAndView mv = new ModelAndView("redirect:/admin");
 
 	
 
@@ -139,12 +140,12 @@ public class SupplierController {
 
 	
 
-	@PostMapping("supplier/update")
+	@RequestMapping("admin/supplier/update")
 	public ModelAndView updateS(
 			@RequestParam String name, 
 			@RequestParam String address) {
 
-		ModelAndView mv = new ModelAndView("redirect:/manage_suppliers");
+		ModelAndView mv = new ModelAndView("redirect:/admin");
 supplier.setAddress(address);
 
 		
@@ -155,7 +156,7 @@ supplier.setAddress(address);
 
 		if (supplierDAO.update(supplier)) {
 
-			mv.addObject("message", "You successfully Updated category");
+			mv.addObject("message", "You successfully Updated supplier");
 
 		} else {
 
@@ -171,7 +172,7 @@ supplier.setAddress(address);
 
 	
 
-	@GetMapping("/supplier/edit")
+	@RequestMapping("admin/supplier/edit")
 
 	public  ModelAndView  editSupplier(@RequestParam("id") int id)
 
