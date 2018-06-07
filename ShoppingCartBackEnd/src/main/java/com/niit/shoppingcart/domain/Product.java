@@ -4,14 +4,15 @@ package com.niit.shoppingcart.domain;
 
 import java.beans.Transient;
 import java.sql.Date;
+import java.util.Set;
 
-
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -25,14 +26,12 @@ import org.springframework.stereotype.Component;
 @Table 
 
 @Entity
-
-
 public class Product {
 
 	
 
-	@Id
-
+	
+    @Id
 	private String id;
 	
     
@@ -45,8 +44,13 @@ public class Product {
 	
 
 	private int price;
+	private int stock;
+    
+	
 
 	
+
+
 
 	private Date added_date;
 
@@ -62,10 +66,11 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name="S_ID")
 	private Supplier supplier;
-
-
+/*
+	@OneToMany(targetEntity=Cart.class,mappedBy = "product", cascade = CascadeType.ALL)
+	Set<Cart> cart;
 	
-
+*/
 	public String getId() {
 
 		return id;
@@ -170,7 +175,15 @@ public class Product {
 
 
 
-	
+	public int getStock() {
+		return stock;
+	}
+
+
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
 
 	
 

@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.controller;
+/*package com.niit.shoppingcart.controller;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class UserController {
 	
 	@Autowired
 	private CategoryDAO categoryDAO;
-}
+}*/
 			
 	/*@PostMapping("/validate")
 	public ModelAndView validate(@RequestParam("userName") String userName, 

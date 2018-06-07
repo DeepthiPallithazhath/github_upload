@@ -234,7 +234,8 @@ img {
 						</div>
 						<p class="product-description">${p.description }</p>
 						<h4 class="price">current price: <span>${p.price}</</span></h4>
-						</c:forEach>
+						<h5 style="color: red;">${msg}</h5>
+						
 						<!--  <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
 						<h5 class="sizes">sizes:
 							<span class="size" data-toggle="tooltip" title="small">s</span>
@@ -248,11 +249,22 @@ img {
 							<span class="color blue"></span>
 						</h5>
 						!-->
+					<!--
 						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
+							<<button class="add-to-cart btn btn-default" type="button">add to cart</button>
 							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
 						</div>
+						
 					</div>
+					  -->
+					  <div class="col-xs-12 col-md-6">
+                        
+                            <a class="btn btn-success" href="user/order?id=${p.id}">Add to cart</a>
+                            
+                           
+                       
+                        </div>
+                        </c:forEach>
 				</div>
 			</div>
 		</div>

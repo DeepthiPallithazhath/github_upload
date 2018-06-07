@@ -49,9 +49,10 @@ public class ProductController {
 			@RequestParam String name, 
 			@RequestParam String description,
 			@RequestParam String price,
-			@RequestParam String id,
-			@RequestParam int cid,@RequestParam int sid,@RequestParam("file") MultipartFile file,HttpServletRequest request
+			@RequestParam String id,@RequestParam int stock,
+			@RequestParam("cid") int cid,@RequestParam("sid") int sid,@RequestParam("file") MultipartFile file,HttpServletRequest request
 			) {
+		
 
 		ModelAndView mv = new ModelAndView("redirect:/admin");
 		product.setDescription(description);
@@ -62,6 +63,8 @@ public class ProductController {
 		product.setSupplier(supplierDAO.get(sid));
 		
 		product.setPrice(Integer.parseInt(price));
+		product.setStock(stock);
+		
 		/*String originalfile = file.getOriginalFilename();
 		product.setP_image(originalfile);
 String filepath = request.getSession().getServletContext().getRealPath("/") + "resources/product/" + file.getOriginalFilename();
@@ -169,13 +172,14 @@ String filepath = request.getSession().getServletContext().getRealPath("/") + "r
 			@RequestParam String name, 
 			@RequestParam String description,
 			@RequestParam String price,
-			@RequestParam String id,
-			@RequestParam int cid,@RequestParam int sid,@RequestParam("file") MultipartFile file,HttpServletRequest request) {
+			@RequestParam String id,@RequestParam int stock,
+			@RequestParam("cid") int cid,@RequestParam("sid") int sid,@RequestParam("file") MultipartFile file,HttpServletRequest request) {
 
 		ModelAndView mv = new ModelAndView("redirect:/admin");
 		product=productDAO.get(id);
 		product.setDescription(description);
 		product.setName(name);
+		product.setStock(stock);
 		product.setCategory(categoryDAO.get(cid));
 		//String value should be converted into integer
 		product.setSupplier(supplierDAO.get(sid));
@@ -183,6 +187,11 @@ String filepath = request.getSession().getServletContext().getRealPath("/") + "r
 		product.setPrice(Integer.parseInt(price));
 
 		if (productDAO.update(product)) {
+			
+			System.out.println(file.getName()+"---------file name");
+			
+			if(!file.getName().equals(null))
+			{
 			
 String path="F:\\Project_ShoppingCart\\ShoppingCartFrontEnd\\src\\main\\webapp\\resources\\images\\";
 			
@@ -199,7 +208,7 @@ String path="F:\\Project_ShoppingCart\\ShoppingCartFrontEnd\\src\\main\\webapp\\
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+			}
 
 
 			mv.addObject("message", "You successfully Updated Product");

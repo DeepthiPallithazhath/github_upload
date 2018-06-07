@@ -29,6 +29,8 @@
 
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 </head> 
@@ -39,7 +41,7 @@
 <nav  class="navbar navbar-inverse">
   <div class="container-fluid" style="background-color:navy;">
     <div class="navbar-header">
-      <a class="navbar-brand" href="./">
+      <a class="navbar-brand" href="${pageContext.request.contextPath}/">
      Gadgets
      
      
@@ -48,7 +50,7 @@
     <ul class="nav navbar-nav">
     
      <sec:authorize access="hasRole('ROLE_ADMIN')">
-    <li><a href="admin?message=">ADMIN</a></li>
+    <li><a href="${pageContext.request.contextPath}/admin?message=">ADMIN</a></li>
     </sec:authorize>
      <sec:authorize access="!hasRole('ROLE_ADMIN')">
        <li class="dropdown">
@@ -62,7 +64,7 @@
           
            <c:forEach var="category" items="${categories}">
 
-							<li><a href="ProductPage?id=${category.id}">${category.name}</a></li>
+							<li><a href="${pageContext.request.contextPath}/ProductPage?id=${category.id}">${category.name}</a></li>
 
 						</c:forEach>
 						
@@ -83,19 +85,13 @@
        <c:when test="${pageContext.request.userPrincipal.name != null}">     
         <sec:authorize access="hasRole('ROLE_USER')">
         <li>
-        <a href="view-cart?msg=" title="View Cart">
+        <a href="${pageContext.request.contextPath}/user/cart?msg=" title="View Cart">
       <i class="fa fa-shopping-cart fa-2x">
-      <c:if test="${count!=0}">
-      <span style="background-color:red" class="badge">
-      ${count}
-      </span>
-      
-      </c:if>
       </i></a>
       </li>
     </sec:authorize>
 	   <li ><a>Welcome : ${pageContext.request.userPrincipal.name}</a></li>
-          <li> <a href="<c:url value="/j_spring_security_logout" />" > Logout</a></li>
+          <li> <a href="${pageContext.request.contextPath}/j_spring_security_logout" > Logout</a></li>
 	</c:when>
 	<c:otherwise>
         <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

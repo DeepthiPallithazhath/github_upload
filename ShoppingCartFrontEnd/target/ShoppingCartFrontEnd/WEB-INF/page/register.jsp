@@ -85,7 +85,11 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									
+									<!--  <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>-->
+								
+								<input type="email" class="form-control" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  placeholder="Enter your Email"/>
+								
 								</div>
 							</div>
 						</div>
@@ -111,7 +115,10 @@
 									 <i class="fa fa-users fa" aria-hidden="true"></i> 
 									
 									</span>
-									<input type="text" class="form-control" name="mobile" id="mobile"  placeholder="mobile"/>
+									
+									 <input type="text" class="form-control" name="mobile" id="mobile"  placeholder="mobile"/> 
+									<!-- <input type="tel" class="form-control" name="mobile" id="mobile" pattern="^\d{4}-\d{3}-\d{4}$"   placeholder="mobile"/> -->
+								
 								</div>
 							</div>
 						</div>

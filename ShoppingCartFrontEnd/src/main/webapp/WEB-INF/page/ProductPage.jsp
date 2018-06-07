@@ -72,9 +72,9 @@
 </style>
 </head>
 <body>
-<!--  
+ 
 <div class="container">
-    <div class="well well-sm">
+  <!--   <div class="well well-sm">
         <strong>Category Title</strong>
         <div class="btn-group">
             <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
@@ -85,9 +85,9 @@
     -->
     <div id="products" class="row list-group">
     <c:forEach var="p" items="${products}" >
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="${pageContext.request.contextPath}/resources/images/${p.id}.jpg" alt="" />
+        <div class="item  col-xs-4 col-lg-4" style="height: 400px;">
+            <div class="thumbnail" style="height: 400px;">
+                <img style="height: 300px; width: 200" class="group list-group-image" src="${pageContext.request.contextPath}/resources/images/${p.id}.jpg" alt="" />
                 <div class="caption">
                     <h4 class="group inner list-group-item-heading">
                         ${p.name}</h4>
@@ -103,7 +103,7 @@
                         </div>
                         <div class="col-xs-12 col-md-6">
                         
-                            <a class="btn btn-success" href="ProductDetails?id=${p.id}">View details</a>
+                            <a class="btn btn-success" href="ProductDetails?id=${p.id}&msg=">View details</a>
                             
                            
                        
@@ -115,11 +115,12 @@
        </c:forEach>
     </div>
     </div>
-    <script type="text/javascript">
+    
+   <!--  <script type="text/javascript">
     $(document).ready(function() {
         $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
         $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
     });
-    </script>
+    </script> -->
 </body>
 </html>

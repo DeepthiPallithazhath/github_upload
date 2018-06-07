@@ -23,7 +23,7 @@ public class Supplier
 	int id;
 	String name;
 	String address;
-	@OneToMany(targetEntity=Product.class,mappedBy = "supplier", cascade = CascadeType.ALL)
+	@OneToMany(targetEntity=Product.class,mappedBy = "supplier",cascade=CascadeType.ALL)
 	Set<Product> products;
 	public int getId() {
 		return id;

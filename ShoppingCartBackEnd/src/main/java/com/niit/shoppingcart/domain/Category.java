@@ -44,7 +44,7 @@ public class Category {
 	
 
 	private Date added_date;
-	@OneToMany(targetEntity=Product.class,mappedBy = "category", cascade = CascadeType.ALL)
+	@OneToMany(targetEntity=Product.class,mappedBy = "category",cascade=CascadeType.ALL)
 	Set<Product> products;
 
 

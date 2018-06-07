@@ -12,9 +12,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="col-xs-8 container">
 <!-- create a form to save product -->
 
 <form action="update" method="post" enctype="multipart/form-data">
+<!-- 
 <table border="2" align="center"  bordercolor="ash">
 
 <tr><td>Product ID : </td><td><input type="text" name="id" value="${product.id }" readonly="true"> </td></tr>
@@ -23,8 +25,9 @@
 
 <tr><td>Price : </td><td><input type="text" name="price" value="${product.price}"> </td></tr>
 <tr><td>Description : </td><td><input type="text" name="description" value="${product.description}"> </td></tr>
-
+-->
 <!-- select/choose the category  -->
+<!-- 
 <tr>
 <td>Select Category</td>
 <td>
@@ -56,25 +59,76 @@
 
 <tr><td></td></tr>
 
-
+ -->
 <!-- upload the image -->
+<div class="form-group">
+    <label for="exampleInputEmail1">Product ID</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="id" aria-describedby="emailHelp" value="${product.id}" readonly="readonly">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Product Name</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="name"value="${product.name}" placeholder="name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Description</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="description" value="${product.description}" placeholder="description">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Price</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="price" value="${product.price}" placeholder="price">
+  </div>
+  
+   <div class="form-group">
+    <label for="exampleInputPassword1">Stock</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="stock" value="${product.stock}" placeholder="stock">
+  </div>
+  
+  <div class="form-group">
+  <label for="sel1">Select Category:</label>
+ 
+  <select class="form-control" id="sel1" name="cid">
+   <c:forEach var="category" items="${categories}">
+    <option value="${category.id}">${category.name}  </option> 
+    </c:forEach>
+  </select>
 
-<tr>
+</div>
+<div class="form-group">
+  <label for="sel1">Select Supplier:</label>
+ 
+
+  <select class="form-control" id="sel1" name="sid">
+   <c:forEach var="supplier" items="${suppliers}">
+    <option value="${supplier.id}">${supplier.name}  </option> 
+    </c:forEach>
+  </select>
+
+</div>
+<div class="form-group">
+    <label for="exampleFormControlFile1">Upload Image</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Update</button>
+<!--  <tr>
 
 				<td><input type="submit" value="Update"></td>
 
-			</tr>
+			</tr>-->
 
 
 
 		
 </table>
+
 </form>
 
 
 
 
-
+</div>
 
 
 

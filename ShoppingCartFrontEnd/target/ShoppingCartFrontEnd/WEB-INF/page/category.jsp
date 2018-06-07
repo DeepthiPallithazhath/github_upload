@@ -13,7 +13,7 @@
 <form action="category/save" method="post">
 
 
-
+<!--  
 		<table align="center" border="2" bordercolor="blue">
 
 			<tr>
@@ -41,10 +41,21 @@
 
 
 		</table>
-
-
+-->
+<div class="form-group">
+    <label for="exampleInputEmail1">Category Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Category Name">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Description</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="description">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
 
 	</form>
+	
 	<table border="2" align="center"  bordercolor="ash">
 <tr>
 

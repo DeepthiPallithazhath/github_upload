@@ -3,20 +3,14 @@ package com.niit.shoppingcart.domain;
 
 
 import java.sql.Date;
-
-
-
-import javax.annotation.Generated;
-
 import javax.persistence.Entity;
-
 import javax.persistence.GeneratedValue;
-
 import javax.persistence.GenerationType;
-
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import com.niit.shoppingcart.domain.Product;
 
 
 
@@ -35,24 +29,23 @@ public class Cart {
 	@Id
 
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-
+	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
+
+	@ManyToOne
+	@JoinColumn(name="P_ID")	
+	private Product product;
 	
-
-	private String emailID;
-
 	
-
-	private String productName;
+	@ManyToOne
+	@JoinColumn(name="U_ID")	
+	private User user;
 
 	
 
 	private int quantity;
-
-	
-
-	private int price;
 
 	
 
@@ -80,37 +73,28 @@ public class Cart {
 
 
 
-	public String getEmailID() {
 
-		return emailID;
-
+	public Product getProduct() {
+		return product;
 	}
 
 
 
-	public void setEmailID(String emailID) {
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 
-		this.emailID = emailID;
-
+	
+	public User getUser() {
+		return user;
 	}
 
 
 
-	public String getProductName() {
-
-		return productName;
-
+	public void setUser(User user) {
+		this.user = user;
 	}
-
-
-
-	public void setProductName(String productName) {
-
-		this.productName = productName;
-
-	}
-
-
+	
 
 	public int getQuantity() {
 
@@ -128,19 +112,7 @@ public class Cart {
 
 
 
-	public int getPrice() {
 
-		return price;
-
-	}
-
-
-
-	public void setPrice(int price) {
-
-		this.price = price;
-
-	}
 
 
 

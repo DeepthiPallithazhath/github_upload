@@ -118,8 +118,6 @@ public class ApplicationContextConfiguration {
 		
 		sessionBuilder.addAnnotatedClass(User.class);
 
-	
-
 		return sessionBuilder.buildSessionFactory();
 
 	}

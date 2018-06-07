@@ -90,12 +90,12 @@ public class RegisterController {
 
 		if (userDAO.save(user)) {
 
-			mv.addObject("message", "You successfully registered ");
+			mv.addObject("msg", "You successfully registered ");
 			
 
 		} else {
 
-			mv.addObject("message", "Could not register.  please try after some time.");
+			mv.addObject("msg", "Could not register.  please try after some time.");
 
 
 

@@ -68,7 +68,7 @@
      <div class="item active"> 
 
 
-       <img src="resources/images/tv1.jpg" alt="SAMSUNG" style="width:100%;margin-right:30px;"> 
+       <img src="resources/images/sam1.jpeg" alt="SAMSUNG" style="width:100%;margin-right:30px;"> 
 
 
       </div> 
@@ -80,7 +80,7 @@
       <div class="item"> 
 
 
-        <img src="resources/images/tv2.png" alt="LG" style="width:100%;"> 
+        <img src="resources/images/sam2.jpeg" alt="LG" style="width:100%;"> 
 
 
       </div> 
@@ -92,7 +92,7 @@
       <div class="item"> 
 
 
-        <img src="resources/images/tv3.jpg" alt="PHILIPS" style="width:100%;"> 
+        <img src="resources/images/sam4.jpg" alt="PHILIPS" style="width:100%;"> 
 
 
      </div> 
